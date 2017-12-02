@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        outline: none;
+    }
+    div{
+        width: 100%;
+        height: 100vh;
+        background: #ccc;
+        position: relative;
+    }
+    main{
+        width: 400px;
+        height: 220px;
+        border-radius: 10px;
+        margin: auto;
+        background-color: white;
+        padding: 20px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    h2{
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    section{
+        margin-bottom: 10px;
+    }
+    label{
+        font-size: 18px;
+        display: block;
+    }
+    .username,.password{
+        width: 250px;
+        height: 20px;
+    }
+    input[type = submit]{
+        width: 180px;
+        height: 40px;
+        border: 0;
+        font-size: 18px;
+        background-color: skyblue;
+        display: block;
+        margin-top: 25px;
+    }
+</style>
+<body>
+    <div>
+        <main>
+            <h2>欢迎登录</h2>
+            <section>
+                <label for="">用户名:</label>
+                <input type="text" placeholder="请输入用户名:" class="username" name="username" autofocus>
+            </section>
+            <section>
+                <label for="">密码:</label>
+                <input type="password" placeholder="请输入密码:" class="password" name="password">
+            </section>
+            <input type="submit" value="登录" class="login">
+        </main>
+    </div>
+</body>
+</html>
+<script>
+    let username = document.querySelector('.username');
+    let password = document.querySelector('.password');
+    var login = document.querySelector('.login')
+//    console.log(username,password,login);
+    login.onclick = function(){
+        if(username.value.trim() == 'admin' && password.value.trim() == '123456'){
+            alert('登录成功');
+        }else{
+            location.assign('error.html');
+        }
+    }
+
+</script>
